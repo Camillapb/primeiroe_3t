@@ -31,6 +31,10 @@ function quadrado(){
     }
 }
 
+function moeda (atual){
+return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+}
+
 function calcula(){
     let val = document.getElementById("valor").value;
     let j = document.getElementById("juros").value;
@@ -59,9 +63,10 @@ document.getElementById("valor").focus();
 for(let m=1; m <= t; m++){
     let res = val * (1+(j/100));
     val = res;
-    document.write(" Mes " + " = " + res + " <br>");
+    //document.write(" Mes " + " = " + moeda (res) + " <br>");
 }
-    document.write("Resultado: "+res);
+    document.getElementById("total").innerHTML= "total: " + moeda(res);
+//document.write("Resultado: "+ moeda (res));
 }
 
 function somarNotas(){
