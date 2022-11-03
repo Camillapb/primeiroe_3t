@@ -60,12 +60,15 @@ document.getElementById("valor").focus();
 
 
     let res = val;
+    let texto = "";
 for(let m=1; m <= t; m++){
     let res = val * (1+(j/100));
     val = res;
+    texto += m + ": " + moeda(res) + "<br>";
     //document.write(" Mes " + " = " + moeda (res) + " <br>");
 }
-    document.getElementById("total").innerHTML= "total: " + moeda(res);
+document.getElementById("mes").innerHTML= texto;
+document.getElementById("total").innerHTML= "total: " + moeda(res);
 //document.write("Resultado: "+ moeda (res));
 }
 
